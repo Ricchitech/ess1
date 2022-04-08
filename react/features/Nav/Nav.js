@@ -1,17 +1,26 @@
 import React from 'react';
-import logoImg from '../../../images/Group 10523.png';
-import settingsIcon from '../../../images/Vector.png';
-import helpIcon from '../../../images/help_outline_black_24dp (2) 1.png';
-import feedbackIcon from '../../../images/feedback_black_24dp 1.png';
-// import { Link, NavLink } from 'react-router-dom';
+import { MdOutlineFeedback, MdHelpOutline } from 'react-icons/md';
+import { FiSettings } from 'react-icons/fi';
 import { createUseStyles } from 'react-jss';
+import { Watermarks } from '../base/react';
+import {SettingsButton, SETTINGS_TABS} from '../settings';
+import downAero from '../../../images/down aero.png';
 
+
+declare var interfaceConfig: Object;
 
 const styles = createUseStyles({
+
+
      nav : {
+       position: "relative",
         display: "flex",
         justifyContent: "space-between",
-        height: "93px",
+        alignContent: "center",
+        alignItems: "center",
+        padding: "15px 0",
+        width: "100vw",
+       
         backgroundColor: "rgba(255, 255, 255, 1)",
         borderBottom: "0.7px solid rgba(174, 174, 174, 1) ",
         fontFamily: "Poppins",
@@ -70,20 +79,23 @@ const styles = createUseStyles({
         margin: "auto 64px",
         width: "156px",
         height: "28px",
-        /* background-color: "#AEAEAE", */
+        color: "#222",
     }
 });
 
 
 function WelcomePage() {
     const classes = styles();
+  const { DEFAULT_WELCOME_PAGE_LOGO_URL, DISPLAY_WELCOME_FOOTER } = interfaceConfig;
     return (
     
-     <div className={classes.nav}>
-        <a 
-          href="/"
-          className={classes.logo}><img src={logoImg} alt='Logo'/>
+     <div className={classes.nav}> 
+        <a
+          href="#"
+          style={{ textDecoration: "none", color: 'inherit' }} >
+        <img src={DEFAULT_WELCOME_PAGE_LOGO_URL} alt="Logo" className='welcome-watermark' style={{marginLeft:"10px"}} />
         </a>
+        
 
       <div className={classes.buttons}>
           <a
@@ -100,9 +112,9 @@ function WelcomePage() {
       </div>
 
       <div className={classes.menu}>
-          <a href="#"><img src={settingsIcon} alt="settings" /></a>
-          <a href="#"><img src={helpIcon} alt="help" /></a>
-          <a href="#"><img src={feedbackIcon} alt="feedback" /></a>
+          <FiSettings size={25}  />            
+          <MdHelpOutline size={25} />
+          <MdOutlineFeedback size={25} />
       </div>
     </div>
     

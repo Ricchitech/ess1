@@ -1,27 +1,26 @@
 import React, { useState } from 'react';
-import videoIcon from '../../../images/videoIcon.png';
-import plusIcon from '../../../images/add_black_24dp (3) 1.png';
-import downAero from '../../../images/down aero.png';
-import back from '../../../images/back.png';
-// import { Link } from 'react-router-dom';
+import { BsCameraVideo } from "react-icons/bs";
+import { AiOutlinePlus } from "react-icons/ai";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { createUseStyles } from 'react-jss';
 
 
 const styles = createUseStyles({
-    body : {
-      backgroundColor: "#fff",
-        overflowX: "hidden",
-    },
+  body:{
+    overflow: "hidden",
+  },
+     
     
     background : {
         position: "relative",
         height: "580px",
-        backgroundImage: `url(${back})`,
+        backgroundImage: `url(../../../images/background.svg)`,
         backgroundColor:"#fff",
         backgroundPosition:"center",
         backgroundSize: "fill",
         backgroundRepeat: "no-repeat",
         left: "200px",
+        zIndex: "1",
     },
     info : {
         display: "flex",
@@ -41,12 +40,14 @@ const styles = createUseStyles({
         fontStyle: "normal",
         fontWeight: "600",
         fontSize: "38px",
+        lineHeight: "57px",
     },
     
     subHeading : {
         fontStyle:"normal",
         fontWeight: "400",
         fontSize: "18px",
+        lineHeight: "27px",
     },
     
     buttonsMeeting : {
@@ -83,10 +84,11 @@ const styles = createUseStyles({
         position: "relative",
         top: "80px",
         left: "20px",
+        
     },
     dropDown : {
         position: "relative",
-        top: "88px",
+        top: "84px",
         display: "block",
         margin: "0 auto",
         /* left: "20px", */
@@ -136,11 +138,11 @@ const styles = createUseStyles({
         display: "block",
         position: "relative",
         margin:"0 auto",
-        top: "40px",
+        top: "50px",
     },
     spanJoinMeeting : {
         position: "relative",
-        top: "60px",
+        top: "80px",
         left: "30px",
     }
     
@@ -163,24 +165,25 @@ function Header(props) {
         <div className={classes.overlayContents}>
           <div className={classes.info}>
             <div className={classes.title}>Speakout</div>
-            <div className={classes.subHeading}>Unlimited, end to end encrypted, private video calls, right in your browser, powered by Ziroh Labs.</div></div>
+            <div className={classes.subHeading}>Unlimited end-to-end encrypted <br/> private video call right in your browser.</div></div>
           <div className={classes.buttonsMeeting}>
             <div onClick={onShowStartMeetingOptions} className={classes.startNewMeeting}>
-            <img className={classes.videoImg} src={videoIcon} alt="" />
+            <BsCameraVideo className={classes.videoImg} size={40}/>
             <span className={classes.spanStartMeeting}>Start new meeting</span>
-            <img className={classes.dropDown} src={downAero} alt="" />
+            <MdOutlineKeyboardArrowDown className={classes.dropDown} size={22}/>
             {startMeetingOptions.show ? <div className={classes.startNewOptions}>
             <span onClick={startMeetingNow}>Start meeting</span>
             <div className={classes.speratorLine}></div>
               <span>Create link for later</span>
             </div> : ''}
           </div>
-          
             <a style={{textDecoration:"none"}} href="#">
             <div className={classes.JoinAMeeting}>
-              <img className={classes.plusImg} src={plusIcon} alt="" />
+              <AiOutlinePlus className={classes.plusImg} size={40} />
               <span className={classes.spanJoinMeeting}>Join a meeting</span>
-            </div></a></div>
+            </div>
+            </a>
+            </div>
         </div>
       </div>
     

@@ -133,7 +133,7 @@ class WelcomePage extends AbstractWelcomePage {
         super.componentDidMount();
 
         document.body.classList.add('welcome-page');
-        document.title = "Ziroh Meet";
+        document.title = "Speakout";
 
         if (this.state.generateRoomnames) {
             this._updateRoomname();
@@ -189,11 +189,12 @@ class WelcomePage extends AbstractWelcomePage {
         const footerClassName = DISPLAY_WELCOME_FOOTER ? 'with-footer' : 'without-footer';
 
         return (
-
-            <>
-               <Nav />
-               <Header startMeetingNow={this._onFormSubmit} /> 
-            </>
+<div className="welcompage" style={{backgroundColor:"#fff"}}>
+                <Nav />
+               <Header startMeetingNow={this._onFormSubmit} />
+</div>
+        );
+    }
 
 
             // <div
@@ -291,8 +292,8 @@ class WelcomePage extends AbstractWelcomePage {
             //     { DISPLAY_WELCOME_FOOTER && this._renderFooter()}
             // </div>
 
-        );
-    }
+    //     );
+    // }
 
     /**
      * Renders the insecure room name warning.
