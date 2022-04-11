@@ -3,7 +3,8 @@
 /**
  * Style variables
  */
-$baseFontFamily: -apple-system, BlinkMacSystemFont,'poppins', 'open_sanslight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ //$baseFontFamily: -apple-system, BlinkMacSystemFont,'poppins', 'open_sanslight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$baseFontFamily: -apple-system, BlinkMacSystemFont,'poppins', 'open_sanslight', 'Helvetica Neue', Helvetica, sans-serif;
 $hangupColor:#DD3849;
 $hangupHoverColor: #F25363;
 $hangupFontSize: 2em;
@@ -153,11 +154,11 @@ $unsupportedDesktopBrowserTextFontSize: 21px;
 /**
  * The size of the default watermark.
  */
-$watermarkWidth: 71px;
-$watermarkHeight: 32px;
+$watermarkWidth: 194px;
+$watermarkHeight: 52px;
 
-$welcomePageWatermarkWidth: 71px;
-$welcomePageWatermarkHeight: 32px;
+$welcomePageWatermarkWidth:194px;
+$welcomePageWatermarkHeight: 52px;
 
 /**
  * Welcome page variables.
