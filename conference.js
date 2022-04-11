@@ -155,6 +155,8 @@ import { createRnnoiseProcessor } from './react/features/stream-effects/rnnoise'
 import { endpointMessageReceived } from './react/features/subtitles';
 import { muteLocal } from './react/features/video-menu/actions.any';
 import UIEvents from './service/UI/UIEvents';
+import {toggleE2EE} from './react/features/e2ee/actions'; //E2EE Events
+
 
 const logger = Logger.getLogger(__filename);
 
@@ -293,8 +295,11 @@ class ConferenceConnector {
         this._resolve = resolve;
         this._reject = reject;
         this.reconnectTimeout = null;
-        room.on(JitsiConferenceEvents.CONFERENCE_JOINED,
-            this._handleConferenceJoined.bind(this));
+        room.on(JitsiConferenceEvents.CONFERENCE_JOINED,()=>{
+            this._handleConferenceJoined.bind(this);
+            APP.store.dispatch(toggleE2EE(true)); //Making E2EE as Default
+
+        });
         room.on(JitsiConferenceEvents.CONFERENCE_FAILED,
             this._onConferenceFailed.bind(this));
     }
