@@ -7,20 +7,22 @@ import { createUseStyles } from 'react-jss';
 
 const styles = createUseStyles({
   body:{
-    overflow: "hidden",
+    //overflow: "hidden",
+
   },
      
     
     background : {
         position: "relative",
         height: "580px",
-        backgroundImage: `url(../../../images/background.svg)`,
-        backgroundColor:"#fff",
-        backgroundPosition:"center",
-        backgroundSize: "fill",
-        backgroundRepeat: "no-repeat",
+      backgroundImage: `url(../../../images/background.svg)`,
+      //backgroundColor: "#fff",
+      backgroundPosition: "center",
+      backgroundSize: "fill",
+      backgroundRepeat: "no-repeat",
         left: "200px",
-        zIndex: "1",
+        zIndex: "0",
+        width: "100vw",
     },
     info : {
         display: "flex",

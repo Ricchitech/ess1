@@ -72,6 +72,7 @@ function SecurityDialog({
     setPassword
 }: Props) {
     const [ passwordEditEnabled, setPasswordEditEnabled ] = useState(false);
+    const e2eestatus=false;
 
     useEffect(() => {
         if (passwordEditEnabled && _password) {
@@ -97,9 +98,16 @@ function SecurityDialog({
                     passwordNumberOfDigits = { _passwordNumberOfDigits }
                     setPassword = { setPassword }
                     setPasswordEditEnabled = { setPasswordEditEnabled } />
-                {
+                {/* {
                     _showE2ee ? <>
                         <div className = 'separator-line' />
+                        <E2EESection />
+                    </> : null
+                } */}
+
+                {
+                    e2eestatus ? <>
+                        <div className='separator-line' />
                         <E2EESection />
                     </> : null
                 }

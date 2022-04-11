@@ -180,13 +180,13 @@ class WelcomePage extends AbstractWelcomePage {
 
 
     render() {
-        const { _moderatedRoomServiceUrl, t } = this.props;
-        const { DEFAULT_WELCOME_PAGE_LOGO_URL, DISPLAY_WELCOME_FOOTER } = interfaceConfig;
-        const showAdditionalCard = this._shouldShowAdditionalCard();
-        const showAdditionalContent = this._shouldShowAdditionalContent();
-        const showAdditionalToolbarContent = this._shouldShowAdditionalToolbarContent();
-        const contentClassName = showAdditionalContent ? 'with-content' : 'without-content';
-        const footerClassName = DISPLAY_WELCOME_FOOTER ? 'with-footer' : 'without-footer';
+        //const { _moderatedRoomServiceUrl, t } = this.props;
+        //const { DEFAULT_WELCOME_PAGE_LOGO_URL, DISPLAY_WELCOME_FOOTER } = interfaceConfig;
+        //const showAdditionalCard = this._shouldShowAdditionalCard();
+        //const showAdditionalContent = this._shouldShowAdditionalContent();
+        //const showAdditionalToolbarContent = this._shouldShowAdditionalToolbarContent();
+        //const contentClassName = showAdditionalContent ? 'with-content' : 'without-content';
+        //const footerClassName = DISPLAY_WELCOME_FOOTER ? 'with-footer' : 'without-footer';
 
         return (
 <div className="welcompage" style={{backgroundColor:"#fff"}}>
